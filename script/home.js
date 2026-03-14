@@ -14,8 +14,8 @@ const displayLesson = (lessons)=>{
    for(let lesson of lessons){
     const btnDiv=document.createElement("div");
     btnDiv.innerHTML=`
-    <div class="bg-white">
-  <div class="  py-5 px-5 flex justify-between">
+    <div onclick="my_modal_5.showModal()" class="bg-white">
+  <div class=" py-5 px-5 flex justify-between">
         <div>
             <img src="./assets/Open-Status.png" alt="">
         </div>
@@ -32,7 +32,7 @@ const displayLesson = (lessons)=>{
     </div>
     <p>#${lesson.id} by ${lesson.author}</p>
     <p>${lesson.createdAt}</p>
-    </div>
+   </div>
     `;
      levelContainer.appendChild(btnDiv);
    }
