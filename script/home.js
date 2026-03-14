@@ -14,7 +14,7 @@ const displayLesson = (lessons)=>{
    for(let lesson of lessons){
     const btnDiv=document.createElement("div");
     btnDiv.innerHTML=`
-    <div onclick="my_modal_5.showModal()" class="bg-white">
+    <div onclick="loadWordDetail(${lesson.id})" class="bg-white">
   <div class=" py-5 px-5 flex justify-between">
         <div>
             <img src="./assets/Open-Status.png" alt="">
@@ -38,9 +38,15 @@ const displayLesson = (lessons)=>{
    }
 };
 
- loadLessons();
+loadLessons();
 
-
+const loadWordDetail=async(id)=>{
+    const url =`https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}${id}`;
+    console.log(url);
+    const res= await fetch(url);
+    const details=await res.json();
+    console.log(details);
+};
 
 
 document.getElementById("new-issue-btn").addEventListener("click", function(){
