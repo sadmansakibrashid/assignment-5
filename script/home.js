@@ -46,8 +46,8 @@ const displayLesson = (lessons)=>{
         <button class="btn btn-soft btn-error">${lesson.labels[1]}</button>
     </div>
     <p>#${lesson.id} by ${lesson.author}</p>
-    <p>${lesson.createdAt}</p>
-   </div>
+    <p>${new Date(lesson.createdAt).toLocaleString()}</p>
+     </div>
     `;
      levelContainer.appendChild(btnDiv);
    }
