@@ -1,12 +1,25 @@
 let allIssues = [];
 const loadLessons = () => {
+     manageSpinner(true);
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res)=>res.json())
     .then((json)=>{
         allIssues = json.data;
         displayLesson(allIssues);
+        manageSpinner(false);
     });
 };
+
+const manageSpinner=(status)=>{
+    if(status==true){
+        document.getElementById("spinner").classList.remove("hidden");
+        document.getElementById("level-container").classList.add("hidden");
+    }else{
+        document.getElementById("level-container").classList.remove("hidden");
+        document.getElementById("spinner").classList.add("hidden");
+    }
+}
+
 const displayLesson = (lessons)=>{
    const levelContainer=document.getElementById("level-container");
     levelContainer.innerHTML="";
@@ -38,6 +51,7 @@ const displayLesson = (lessons)=>{
     `;
      levelContainer.appendChild(btnDiv);
    }
+    manageSpinner(false);
 };
 
 loadLessons();
