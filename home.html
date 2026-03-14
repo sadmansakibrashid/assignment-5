@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- tailwind+daisyui -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+     <!-- icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+       <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">daisyUI</a>
+  </div>
+  
+  <div class="flex gap-2">
+    <input id="search-input" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <button id="new-issue-btn" class="btn btn-primary">+ New Issue</button>
+</div>
+</div>
+  </header>
+
+  <section class="bg-[#FBFBFB] p-2 w-11/12 mx-auto my-10">
+<div class="flex gap-2 my-5">
+  <button onclick="filterIssues('all')"  class="btn btn-primary">All</button>
+  <button onclick="filterIssues('open')" class="btn">Open</button>
+  <button onclick="filterIssues('closed')" class="btn">Closed</button>
+</div>
+  </section>
+
+  <section class="bg-[#FBFBFB] w-11/12 p-2 mx-auto my-10">
+    <div class="flex justify-between pb-6">
+        <div class="flex"><img src="./assets/Aperture.png" alt="">
+        <div class="w-[838px]">
+            <h3 class="font-semibold">50 Issues</h3>
+            <p class="text-[#64748B] text-sm ">Track and manage your project issues</p>
+        </div>
+        </div>
+        
+        <div class="flex gap-2">
+            <div class="flex items-center gap-2">
+                <img class="w-[12px] h-[12px] " src="./assets/Open-Status.png" alt="">
+                <h3> open</h3>
+            </div>
+            <div class="flex align-middle items-center gap-2">
+                <img class="w-[12px] h-[12px] items-center" src="./assets/Closed- Status .png" alt="">
+            <h3>close</h3>
+            </div>
+            
+        </div>
+    </div>
+  </section>
+
+  <section id="level-container"
+  class="bg-[#FBFBFB] p-10 w-11/12 mx-auto my-10 grid grid-cols-3 gap-5">
+    
+  </section>
+  <script src="./script/home.js"></script>
+</body>
+</html>
