@@ -57,13 +57,24 @@ document.getElementById("new-issue-btn").addEventListener("click", function(){
     displayLesson(filtered);
 
 });
+const buttons = document.querySelectorAll(".filter-btn");
 
-const filterIssues = (status) => {
-    if(status === "all"){
-        displayLesson(allIssues);
-        return;
+buttons.forEach(button => {
+  button.addEventListener("click", function () {
+
+    buttons.forEach(btn => btn.classList.remove("btn-primary"));
+
+    this.classList.add("btn-primary");
+
+    const status = this.innerText.toLowerCase();
+    if (status === "all") {
+      displayLesson(allIssues);
+      return;
     }
+     const filtered = allIssues.filter(issue =>
+      issue.status.toLowerCase() === status
+    );
 
-    const filtered = allIssues.filter(issue => issue.status.toLowerCase() === status);
     displayLesson(filtered);
-};
+  });
+});
