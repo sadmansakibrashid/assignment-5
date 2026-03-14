@@ -11,6 +11,8 @@ const displayLesson = (lessons)=>{
    const levelContainer=document.getElementById("level-container");
     levelContainer.innerHTML="";
 
+    document.getElementById("issue-count").innerText = `${lessons.length} Issues`;
+
    for(let lesson of lessons){
     const btnDiv=document.createElement("div");
     btnDiv.innerHTML=`
